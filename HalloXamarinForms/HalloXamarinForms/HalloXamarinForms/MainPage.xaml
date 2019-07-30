@@ -16,6 +16,29 @@
         <Entry x:Name="entryPasswort" Placeholder="Passwort" IsPassword="True"/>
         <Button Text="Login" Clicked="Button_Clicked"/>
 
+        <BoxView BackgroundColor="LightGreen"/>
+
+        <DatePicker />
+        <TimePicker/>
+        
+        <!-- Mehrzeiliges Entry -->
+        <Editor />
+
+        <!-- Picker: Vergleichbar mit ComboBox aus WPF -->
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <!-- Progress muss zwischen 0 und 1-->
+        <ProgressBar Progress="0.5"/>
+        <Slider Minimum="0" Maximum="100"/>
+        <Stepper Minimum="0" Maximum="10"/>
+
+        <Switch IsToggled="True"/>
     </StackLayout>
 
 </ContentPage>
