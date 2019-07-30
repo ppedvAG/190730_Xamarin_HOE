@@ -90,8 +90,7 @@
         <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                   BackgroundColor="Wheat"/>
     </Grid>-->
-
-    <Grid x:Name="gridRoot"
+    <!--<Grid x:Name="gridRoot"
           BackgroundColor="Black"
           Padding="40" RowSpacing="10" ColumnSpacing="10">
         <Grid.RowDefinitions>
@@ -106,21 +105,23 @@
         <Grid.Resources>
             <x:Double x:Key="defaultFontSize">10</x:Double>
 
-            <!-- Expliziter Style -->
+            -->
+    <!-- Expliziter Style -->
+    <!--
             <Style TargetType="Button" x:Key="specialButtonStyle">
                 <Setter Property="BackgroundColor" Value="Salmon"/>
                 <Setter Property="TextColor" Value="ForestGreen"/>
                 <Setter Property="FontSize" Value="20"/>
             </Style>
 
-            <!-- MiniÜbung: Alles auf implizit umstellen-->
+            --><!-- MiniÜbung: Alles auf implizit umstellen-->
 
             <!-- Impliziter Style -->
             <!--<Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Linen"/>
                 <Setter Property="TextColor" Value="DarkGoldenrod"/>
                 <Setter Property="FontSize" Value="40"/>
-            </Style>-->
+            </Style>--><!--
 
         </Grid.Resources>
         
@@ -136,13 +137,13 @@
         <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource specialButtonStyle}" Clicked="Button4_Clicked" />
         <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource specialButtonStyle}"/>
         <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{DynamicResource specialButtonStyle}">
-            <!--<Button.Resources>
+            --><!--<Button.Resources>
                 <Style TargetType="Button" x:Key="specialButtonStyle">
                     <Setter Property="BackgroundColor" Value="LightSalmon"/>
                     <Setter Property="TextColor" Value="DimGray"/>
                     <Setter Property="FontSize" Value="50"/>
                 </Style>
-            </Button.Resources>-->
+            </Button.Resources>--><!--
         </Button>
 
         <Button Grid.Row="3" Grid.Column="0" Text="7" />
@@ -152,7 +153,60 @@
         <Button Grid.Row="4" Grid.Column="1" Text="0" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
 
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="DIAL" BackgroundColor="Green" FontSize="30" TextColor="Black" CornerRadius="30"/>
-    </Grid>
+    </Grid>-->
+    
+    
+    
+    <!-- AbsoluteLayout: LayoutBounds="X,Y,width,height"
+                         LayoutFlags="" : Angabe der proportionalen Werte -->
+
+    <!--<AbsoluteLayout BackgroundColor="Red">
+
+        <BoxView BackgroundColor="LightSalmon"
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.333"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView BackgroundColor="Linen"
+                 AbsoluteLayout.LayoutBounds="50,50,100,100"/>
+        
+        <BoxView BackgroundColor="Goldenrod"
+                 AbsoluteLayout.LayoutBounds="100,100,100,100"/>
+
+        <BoxView BackgroundColor="Blue"
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.667"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+    </AbsoluteLayout>-->
+
+
+    <RelativeLayout>
+
+        <BoxView x:Name="boxViewHeader" BackgroundColor="Coral"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.333}"/>
+
+        <BoxView BackgroundColor="LightYellow" HeightRequest="100" WidthRequest="100"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Width,
+                                Factor=0.5,
+                                Constant=-50}"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Height,
+                                Factor=1,
+                                Constant=-50}"/>
+
+
+    </RelativeLayout>
     
    
 </ContentPage>
