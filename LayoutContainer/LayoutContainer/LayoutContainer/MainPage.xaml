@@ -4,13 +4,47 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="LayoutContainer.MainPage">
+             x:Class="LayoutContainer.MainPage"
+             BackgroundColor="LightSteelBlue">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <!--<StackLayout BackgroundColor="Accent"
+                 Orientation="Vertical"
+                 Spacing="10">
+        <Button Text="Button 1"/>
+        <Button Text="Button 2"/>
+        <Button Text="Button 3"/>
+        <Button Text="Button 4"/>
+        <Button Text="Button 5"/>
+        <Button Text="Button 6"/>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="GhostWhite">
+            <Button Text="Ok" FontSize="30"/>
+            <Button Text="Cancel"/>
+        </StackLayout>
+        
+    </StackLayout>-->
+
+    
+    <!-- VerticalOptons: End           : Nimmt man beim Container (StackLayout) selbst
+                         EndAndExpand  : Nimmt man bei Elemente IM Container (z.B. der Button IM Stacklayout)
+    -->
+    <StackLayout BackgroundColor="Green"
+                 HorizontalOptions="Fill"
+                 Padding="10,50">
+        
+        <Button Text="Mein Button" HorizontalOptions="Center"/>
+        <BoxView BackgroundColor="Ivory"
+                 VerticalOptions="FillAndExpand"
+                 Margin="10,50,100,10"/>
+        <Button Text="Noch ein Button ..."/>
+
     </StackLayout>
-
+    
+    <!-- Margin und Padding -->
+    <!-- Margin: Aussenabstand
+         Padding: Innenabstand
+         Margin="links,oben,rechts,unten"
+         Margin="linksrechts,obenunten"
+         Margin="alleRichtungen"-->
+   
 </ContentPage>
