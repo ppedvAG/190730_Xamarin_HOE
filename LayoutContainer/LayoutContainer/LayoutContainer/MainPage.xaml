@@ -6,6 +6,13 @@
              mc:Ignorable="d"
              x:Class="LayoutContainer.MainPage"
              BackgroundColor="LightSteelBlue">
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="specialButtonStyle">
+            <Setter Property="BackgroundColor" Value="LimeGreen"/>
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+    </ContentPage.Resources>
 
     <!--<StackLayout BackgroundColor="Accent"
                  Orientation="Vertical"
@@ -22,9 +29,7 @@
             <Button Text="Cancel"/>
         </StackLayout>
         
-    </StackLayout>-->
-
-    
+    </StackLayout>-->  
     <!-- VerticalOptons: End           : Nimmt man beim Container (StackLayout) selbst
                          EndAndExpand  : Nimmt man bei Elemente IM Container (z.B. der Button IM Stacklayout)
     -->
@@ -38,15 +43,13 @@
                  Margin="10,50,100,10"/>
         <Button Text="Noch ein Button ..."/>
 
-    </StackLayout>-->
-    
+    </StackLayout>-->  
     <!-- Margin und Padding -->
     <!-- Margin: Aussenabstand
          Padding: Innenabstand
          Margin="links,oben,rechts,unten"
          Margin="linksrechts,obenunten"
          Margin="alleRichtungen"-->
-
     <!--<StackLayout BackgroundColor="Blue" Margin="50">
         <StackLayout VerticalOptions="CenterAndExpand">
             <Button Text=" abasdasd"/>
@@ -55,9 +58,6 @@
 
         </StackLayout>
     </StackLayout>-->
-
-
-
     <!--<Grid BackgroundColor="YellowGreen"
           ColumnSpacing="0"
           RowSpacing="0">
@@ -73,7 +73,6 @@
         <BoxView Grid.Row="3" Grid.Column="2" BackgroundColor="GhostWhite"/>
 
     </Grid>-->
-
     <!--<Grid Padding="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -92,7 +91,8 @@
                   BackgroundColor="Wheat"/>
     </Grid>-->
 
-    <Grid BackgroundColor="Black"
+    <Grid x:Name="gridRoot"
+          BackgroundColor="Black"
           Padding="40" RowSpacing="10" ColumnSpacing="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -103,21 +103,51 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
+        <Grid.Resources>
+            <x:Double x:Key="defaultFontSize">10</x:Double>
+
+            <!-- Expliziter Style -->
+            <Style TargetType="Button" x:Key="specialButtonStyle">
+                <Setter Property="BackgroundColor" Value="Salmon"/>
+                <Setter Property="TextColor" Value="ForestGreen"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
+            <!-- MiniÜbung: Alles auf implizit umstellen-->
+
+            <!-- Impliziter Style -->
+            <!--<Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Linen"/>
+                <Setter Property="TextColor" Value="DarkGoldenrod"/>
+                <Setter Property="FontSize" Value="40"/>
+            </Style>-->
+
+        </Grid.Resources>
+        
+
         <Label Grid.Row="0" Grid.Column="1"
                HorizontalOptions="Center" VerticalOptions="Center"
                Text="1234" TextColor="White" FontSize="40"/>
 
-        <Button Grid.Row="1" Grid.Column="0" Text="1" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
-        <Button Grid.Row="1" Grid.Column="1" Text="2" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
-        <Button Grid.Row="1" Grid.Column="2" Text="3" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
+        <Button Grid.Row="1" Grid.Column="0" Text="1" BackgroundColor="Orange" FontSize="{StaticResource defaultFontSize}" TextColor="Black" CornerRadius="30"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" BackgroundColor="Orange" FontSize="{StaticResource defaultFontSize}" TextColor="Black" CornerRadius="30"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" BackgroundColor="Orange" FontSize="{StaticResource defaultFontSize}" TextColor="Black" CornerRadius="30"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Text="4" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
-        <Button Grid.Row="2" Grid.Column="1" Text="5" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
-        <Button Grid.Row="2" Grid.Column="2" Text="6" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource specialButtonStyle}" Clicked="Button4_Clicked" />
+        <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource specialButtonStyle}"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{DynamicResource specialButtonStyle}">
+            <!--<Button.Resources>
+                <Style TargetType="Button" x:Key="specialButtonStyle">
+                    <Setter Property="BackgroundColor" Value="LightSalmon"/>
+                    <Setter Property="TextColor" Value="DimGray"/>
+                    <Setter Property="FontSize" Value="50"/>
+                </Style>
+            </Button.Resources>-->
+        </Button>
 
-        <Button Grid.Row="3" Grid.Column="0" Text="7" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
-        <Button Grid.Row="3" Grid.Column="1" Text="8" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
-        <Button Grid.Row="3" Grid.Column="2" Text="9" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="7" />
+        <Button Grid.Row="3" Grid.Column="1" Text="8" TextColor="Red" />
+        <Button Grid.Row="3" Grid.Column="2" Text="9" />
 
         <Button Grid.Row="4" Grid.Column="1" Text="0" BackgroundColor="White" FontSize="30" TextColor="Black" CornerRadius="30"/>
 

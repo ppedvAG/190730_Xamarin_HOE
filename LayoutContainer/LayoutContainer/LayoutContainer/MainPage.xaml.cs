@@ -17,5 +17,17 @@ namespace LayoutContainer
         {
             InitializeComponent();
         }
+
+        private void Button4_Clicked(object sender, EventArgs e)
+        {
+            Button auslöser = (Button)sender;
+            // Style zur Laufzeit zuweisen
+            // auslöser.Style = (Style)App.Current.Resources["specialButtonStyle"];
+
+            // Style zur Laufzeit im Dictioanry austauschen:
+            // StaticResource -> Änderung wird nicht übernommen (Button 4 und 5)
+            // DynamicResource -> Änderung wird erkannt und übernommen (Button 6)
+            gridRoot.Resources["specialButtonStyle"] = (Style)App.Current.Resources["specialButtonStyle"];
+        }
     }
 }
