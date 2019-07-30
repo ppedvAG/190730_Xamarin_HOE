@@ -12,8 +12,8 @@
                HorizontalTextAlignment="Center"
                BackgroundColor="OldLace"
                TextColor="YellowGreen"/>
-        <Entry Placeholder="Username"/>
-        <Entry Placeholder="Passwort" IsPassword="True"/>
+        <Entry x:Name="entryUsername" Placeholder="Username"/>
+        <Entry x:Name="entryPasswort" Placeholder="Passwort" IsPassword="True"/>
         <Button Text="Login" Clicked="Button_Clicked"/>
 
     </StackLayout>

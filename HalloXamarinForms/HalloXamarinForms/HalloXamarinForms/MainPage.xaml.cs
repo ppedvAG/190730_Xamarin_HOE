@@ -37,6 +37,9 @@ namespace HalloXamarinForms
             // Variante 3: Mehrere Optionen
             string obst = await DisplayActionSheet("Welches Obst willst du als Nachspeise haben?", null, null, "Apfel", "Birne", "Banane", "Orange");
             await DisplayAlert("Deine Nachspeise ist:", obst, "Mjam ....");
+
+
+            await DisplayAlert("Username:", entryUsername.Text, "Okay");
         }
     }
 }
