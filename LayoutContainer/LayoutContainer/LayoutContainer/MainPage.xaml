@@ -28,7 +28,7 @@
     <!-- VerticalOptons: End           : Nimmt man beim Container (StackLayout) selbst
                          EndAndExpand  : Nimmt man bei Elemente IM Container (z.B. der Button IM Stacklayout)
     -->
-    <StackLayout BackgroundColor="Green"
+    <!--<StackLayout BackgroundColor="Green"
                  HorizontalOptions="Fill"
                  Padding="10,50">
         
@@ -38,7 +38,7 @@
                  Margin="10,50,100,10"/>
         <Button Text="Noch ein Button ..."/>
 
-    </StackLayout>
+    </StackLayout>-->
     
     <!-- Margin und Padding -->
     <!-- Margin: Aussenabstand
@@ -46,5 +46,51 @@
          Margin="links,oben,rechts,unten"
          Margin="linksrechts,obenunten"
          Margin="alleRichtungen"-->
+
+    <!--<StackLayout BackgroundColor="Blue" Margin="50">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Button Text=" abasdasd"/>
+            <Button Text=" abasdasd"/>
+            <Button Text=" abasdasd"/>
+
+        </StackLayout>
+    </StackLayout>-->
+
+
+
+    <!--<Grid BackgroundColor="YellowGreen"
+          ColumnSpacing="0"
+          RowSpacing="0">
+
+        <BoxView Grid.Row="0" BackgroundColor="Magenta"
+                 Grid.ColumnSpan="3"/>
+        <BoxView Grid.Row="1" BackgroundColor="DodgerBlue"
+                 Grid.RowSpan="3"/>
+        <BoxView Grid.Row="5" BackgroundColor="LightGreen"/>
+
+        <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Moccasin"
+                 Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <BoxView Grid.Row="3" Grid.Column="2" BackgroundColor="GhostWhite"/>
+
+    </Grid>-->
+
+    <Grid Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <Entry Grid.Column="0" Grid.Row="0" Placeholder="Suchtext"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Suchen"/>
+        <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                  BackgroundColor="Wheat"/>
+    </Grid>
+    
    
 </ContentPage>
