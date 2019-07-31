@@ -106,8 +106,9 @@ namespace Sensorik
                 }
             };
 
-            var chart = new LineChart() { Entries = entries };
-
+            var chart = new RadialGaugeChart() { Entries = entries };
+            //chart.PointMode = PointMode.Square;
+            //chart.PointSize = 5;
 
             chartView.Chart = chart;
         }

@@ -14,7 +14,7 @@
             <Button Text="Taschenlampe An/Aus" Clicked="ButtonTaschenlampe_Clicked"/>
             <Button Text="INTERNET :)" Clicked="ButtonBrowser_Clicked"/>
 
-            <micro:ChartView x:Name="chartView"/>
+            <micro:ChartView x:Name="chartView" HeightRequest="300"/>
 
         </StackLayout>
         <StackLayout IsVisible="False" x:Name="stackLayoutLandscape" VerticalOptions="Center">
