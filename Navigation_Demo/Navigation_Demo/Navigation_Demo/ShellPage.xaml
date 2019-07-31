@@ -7,11 +7,15 @@
              x:Class="Navigation_Demo.ShellPage"
              Title="Shell mit Xamarin.Forms 4">
 
-    <FlyoutItem Title="Hauptmenü">
+    <Shell.FlyoutHeader>
+        <Image Source="https://placekitten.com/400/300" Aspect="AspectFill"/>
+    </Shell.FlyoutHeader>
+    
+    <FlyoutItem Title="Hauptmenü" Route="Hauptmenü">
         
-        <Tab Title="Hauptseite">
-            <ShellContent>
-                <ContentPage>
+        <Tab Title="Hauptseite" Route="Hauptseite">
+            <ShellContent Title="ShellContent - Title" Route="ContentHauptseite">
+                <ContentPage Title="ContentPage - Title">
                     <StackLayout>
                         <Label Text="Hauptseite im Tab Hauptseite"
                                HorizontalOptions="CenterAndExpand"
@@ -21,13 +25,14 @@
             </ShellContent>
         </Tab>
         
-        <Tab Title="Einstellungen">
-            <ShellContent>
+        <Tab Title="Einstellungen" Route="Einstellungen">
+            <ShellContent Route="ContentEinstellungen">
                 <ContentPage>
                     <StackLayout>
                         <Label Text="Meine Settings ..."
                                HorizontalOptions="CenterAndExpand"
                                VerticalOptions="CenterAndExpand"/>
+                        <Button Text="Zur Hauptseite" Clicked="ButtonZurHauptseite_Clicked"/>
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
