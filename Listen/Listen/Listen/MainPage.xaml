@@ -56,7 +56,12 @@
                     <!-- ImageCell: -||- inkl einem Icon -->
                     <!-- ViewCell: Eigene Templates zusammenbauen -->
 
-                    <ImageCell ImageSource="https://placekitten.com/100/100" Text="{Binding Vorname}" Detail="{Binding Alter}"/>
+                    <ImageCell ImageSource="https://placekitten.com/100/100" Text="{Binding Vorname}" Detail="{Binding Alter}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Info"/>
+                            <MenuItem Text="Delete" Clicked="MenuItemDelete_Clicked"/>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
 
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,11 @@ namespace Listen
             InitializeComponent();
         }
 
+        ObservableCollection<Person> personen;
+
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Person[] personen =
+            personen = new ObservableCollection<Person>
             {
                 new Person{Vorname="Tom",Nachname ="Ate",Alter=10,Kontostand = 100},
                 new Person{Vorname="Anna",Nachname ="Nass",Alter=20,Kontostand = 123},
@@ -38,7 +41,7 @@ namespace Listen
 
         private void ListViewPersonen_Refreshing(object sender, EventArgs e)
         {
-            Person[] personen =
+            personen = new ObservableCollection<Person>
             {
                 new Person{Vorname="Tom",Nachname ="Ate",Alter=10,Kontostand = 100},
                 new Person{Vorname="Anna",Nachname ="Nass",Alter=20,Kontostand = 123},
@@ -47,6 +50,15 @@ namespace Listen
             listViewPersonen.ItemsSource = personen;
 
             listViewPersonen.EndRefresh();
+
+        }
+
+        private void MenuItemDelete_Clicked(object sender, EventArgs e)
+        {
+            MenuItem s = (MenuItem)sender;
+            Person geklicktePerson = (Person)s.BindingContext;
+
+            personen.Remove(geklicktePerson);
         }
     }
 }
