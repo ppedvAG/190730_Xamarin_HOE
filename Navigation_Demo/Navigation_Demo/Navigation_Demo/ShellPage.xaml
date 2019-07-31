@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Navigation_Demo"
              mc:Ignorable="d"
              x:Class="Navigation_Demo.ShellPage"
              Title="Shell mit Xamarin.Forms 4">
@@ -38,6 +39,13 @@
             </ShellContent>
         </Tab>
     </FlyoutItem>
-    
+
+    <FlyoutItem Title="Alte Seiten">
+        <Tab>
+            <ShellContent>
+                <local:Seite2/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
     
 </Shell>
