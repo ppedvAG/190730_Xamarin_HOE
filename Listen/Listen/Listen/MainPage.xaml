@@ -6,9 +6,52 @@
              mc:Ignorable="d"
              x:Class="Listen.MainPage">
 
+    <!-- ItemsLayout="HorizontalList" für Horizontale Listen-->
     <StackLayout>
         <Button Text="Daten laden !" Clicked="Button_Clicked"/>
-        <CollectionView x:Name="collectionViewPersonen" SelectionMode="Single"/>
+        <CollectionView x:Name="collectionViewPersonen"
+                        SelectionMode="Single">
+            
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="4" VerticalItemSpacing="5" HorizontalItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Margin="5" BackgroundColor="Silver">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Text="Name:"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Vorname}"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding Nachname}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Alter:"/>
+                        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Alter}"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Kontostand:"/>
+                        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Kontostand}"/>
+
+                    </Grid>
+                    
+                    <!-- In der ListView: -->
+                    <!-- TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}"/-->
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        
     </StackLayout>
 
 </ContentPage>
