@@ -8,7 +8,7 @@
 
     <StackLayout>
         <Button Text="Daten laden !" Clicked="Button_Clicked"/>
-        <CollectionView x:Name="collectionViewPersonen"/>
+        <CollectionView x:Name="collectionViewPersonen" SelectionMode="Single"/>
     </StackLayout>
 
 </ContentPage>
