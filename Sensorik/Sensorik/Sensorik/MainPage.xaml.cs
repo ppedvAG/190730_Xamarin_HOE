@@ -37,17 +37,24 @@ namespace Sensorik
         }
 
         private bool isOn = false;
-        private void ButtonTaschenlampe_Clicked(object sender, EventArgs e)
+        private async void ButtonTaschenlampe_Clicked(object sender, EventArgs e)
         {
-            if (isOn)
+            try
             {
-                isOn = false;
-                Flashlight.TurnOffAsync();
+                if (isOn)
+                {
+                    isOn = false;
+                    await Flashlight.TurnOffAsync();
+                }
+                else
+                {
+                    isOn = true;
+                    await Flashlight.TurnOnAsync();
+                }
             }
-            else
+            catch (Exception)
             {
-                isOn = true;
-                Flashlight.TurnOnAsync();
+                await DisplayAlert("Fehler","Die Berechtigung wurde leider nicht gesetzt","Ok");
             }
             
         }

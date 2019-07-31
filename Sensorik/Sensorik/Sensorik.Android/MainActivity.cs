@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V4.Content;
+using Android;
 
 namespace Sensorik.Droid
 {
@@ -21,7 +23,17 @@ namespace Sensorik.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+
             LoadApplication(new App());
+
+
+
+            var result = ContextCompat.CheckSelfPermission(this, Manifest.Permission.Flashlight);
+            if (result == Permission.Granted)
+                ;// ...
+            else
+                ; // ...
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
