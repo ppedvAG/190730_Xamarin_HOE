@@ -9,6 +9,8 @@ namespace DataBinding
 {
     class Farbkonverter : IValueConverter
     {
+        private Color oldValidValue;
+
         // OneWay-Binding
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -16,9 +18,10 @@ namespace DataBinding
 
             var colorField = typeof(Color).GetFields().FirstOrDefault(x => x.Name == farbe);
             if(colorField == null)
-                return Color.Black;
+                return oldValidValue;
 
-            return colorField.GetValue(typeof(Color));
+            oldValidValue = (Color)colorField.GetValue(typeof(Color));
+            return oldValidValue;
         }
 
         // TwoWay-Binding
