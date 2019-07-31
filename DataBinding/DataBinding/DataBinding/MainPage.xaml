@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:DataBinding"
              mc:Ignorable="d"
              x:Class="DataBinding.MainPage"
              BackgroundColor="SpringGreen">
+    <ContentPage.Resources>
+        <local:Farbkonverter x:Key="farbkonverter"/>
+    </ContentPage.Resources>
 
     <StackLayout Padding="20">
         <Slider x:Name="sliderWert" ScaleY="2" ScaleX="2" WidthRequest="200" HorizontalOptions="Center" Minimum="0" Maximum="100"/>
@@ -17,14 +21,15 @@
         <Label x:Name="formatiertesLabel_AlternativeSchreibweise" Text="{Binding Value, Source={x:Reference sliderWert},
                                                  StringFormat='{}Aktueller Wert ist: {0:F3}'}"/>
         <!-- Bindingcontext: Alle Elemente in dem Container haben den Binding-Context als Source gesetzt-->
-        <StackLayout BackgroundColor="PowderBlue"
+        <StackLayout BackgroundColor="{Binding Source={x:Reference entryFarbe},Path=Text,Converter={StaticResource farbkonverter}}"
                      BindingContext="{x:Reference sliderWert}">
             <Label Text="{Binding Minimum}"/>
             <Label Text="{Binding Value}"/>
             <Label Text="{Binding Maximum}"/>
         </StackLayout>
-        
-        
+
+        <Entry x:Name="entryFarbe" Text="Rot"/>
+
     </StackLayout>
 
 </ContentPage>
