@@ -11,7 +11,8 @@ namespace Navigation_Demo
             InitializeComponent();
 
             // MainPage = new MainPage();
-            MainPage = new NavigationPage(new MainPage());
+            // MainPage = new NavigationPage(new MainPage());
+            MainPage = new TabPageRoot();
         }
 
         protected override void OnStart()
