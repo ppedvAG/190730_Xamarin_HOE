@@ -17,5 +17,11 @@ namespace Listen
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            string[] personen = { "Tom Ate", "Anna Nass", "Peter Silie", "Martha Pfahl", "Franz Ose", "Klara Fall", "Rainer Zufall", "Frank N Stein", "Albert Tross", "Axel Schweiß", "Bill Dung", "Anna Bolika", "Clair Grube" };
+            collectionViewPersonen.ItemsSource = personen;
+        }
     }
 }
