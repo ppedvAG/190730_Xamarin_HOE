@@ -13,7 +13,8 @@ namespace Navigation_Demo
             // MainPage = new MainPage();
             // MainPage = new NavigationPage(new MainPage());
             // MainPage = new TabPageRoot();
-            MainPage = new CarouselPageRoot();
+            // MainPage = new CarouselPageRoot();
+            MainPage = new MD.MasterDetailPage_Root();
         }
 
         protected override void OnStart()
