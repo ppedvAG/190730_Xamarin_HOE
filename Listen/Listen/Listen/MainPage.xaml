@@ -47,7 +47,9 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
 
-        <ListView x:Name="listViewPersonen">
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <!-- TextCell: Text mit "Text" und "Detail" 2 Texte an -->

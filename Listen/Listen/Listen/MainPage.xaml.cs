@@ -35,5 +35,18 @@ namespace Listen
             };
             listViewPersonen.ItemsSource = personen;
         }
+
+        private void ListViewPersonen_Refreshing(object sender, EventArgs e)
+        {
+            Person[] personen =
+            {
+                new Person{Vorname="Tom",Nachname ="Ate",Alter=10,Kontostand = 100},
+                new Person{Vorname="Anna",Nachname ="Nass",Alter=20,Kontostand = 123},
+                new Person{Vorname="Peter",Nachname ="Silie",Alter=30,Kontostand = 1042340},
+            };
+            listViewPersonen.ItemsSource = personen;
+
+            listViewPersonen.EndRefresh();
+        }
     }
 }
