@@ -3,13 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:micro="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              mc:Ignorable="d"
-             x:Class="Sensorik.MainPage">
+             x:Class="Sensorik.MainPage"
+             Appearing="ContentPage_Appearing">
     <Grid>
         <StackLayout x:Name="stackLayoutPortrait" VerticalOptions="Center">
             <Label Text="Portrait-Template"/>
             <BoxView BackgroundColor="LightGray"/>
             <Button Text="Taschenlampe An/Aus" Clicked="ButtonTaschenlampe_Clicked"/>
+            <Button Text="INTERNET :)" Clicked="ButtonBrowser_Clicked"/>
+
+            <micro:ChartView x:Name="chartView"/>
+
         </StackLayout>
         <StackLayout IsVisible="False" x:Name="stackLayoutLandscape" VerticalOptions="Center">
             <Label Text="Landscape-Template"/>

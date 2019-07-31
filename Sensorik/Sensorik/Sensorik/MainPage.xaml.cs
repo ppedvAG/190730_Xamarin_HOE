@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microcharts;
+using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -55,6 +57,59 @@ namespace Sensorik
             var locale = await TextToSpeech.GetLocalesAsync();
 
             await TextToSpeech.SpeakAsync(entryTextToSpeech.Text,new SpeechOptions { Pitch = 1.5f,Locale = locale.ElementAt(1) });
+        }
+
+        private async void ButtonBrowser_Clicked(object sender, EventArgs e)
+        {
+            switch (Connectivity.NetworkAccess)
+            {
+                case NetworkAccess.Unknown:
+                case NetworkAccess.None:
+                case NetworkAccess.Local:
+                    await DisplayAlert("Internet", " :( ", "Ok");
+                    break;
+                case NetworkAccess.ConstrainedInternet:
+                    await DisplayAlert("Internet", "Welcome to China", "Ok");
+                    break;
+                case NetworkAccess.Internet:
+                    await DisplayAlert("Internet", "Es geht ...","Ok");
+                    break;
+                default:
+                    break;
+            }
+
+            await Browser.OpenAsync("https://www.orf.at");
+        }
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            // Chart befüllen:
+            var entries = new[]
+            {
+                new Microcharts.Entry(55)
+                {
+                    Label = "January",
+                    ValueLabel = "55",
+                    Color = SKColor.Parse("#266489")
+                },
+                new Microcharts.Entry(145)
+                {
+                    Label = "February",
+                    ValueLabel = "145",
+                    Color = SKColor.Parse("#68B9C0")
+                },
+                new Microcharts.Entry(-32)
+                {
+                    Label = "March",
+                    ValueLabel = "-32",
+                    Color = SKColor.Parse("#90D585")
+                }
+            };
+
+            var chart = new LineChart() { Entries = entries };
+
+
+            chartView.Chart = chart;
         }
     }
 }
