@@ -4,15 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Navigation_Demo.MainPage"
-             Title="MainPage aka Seite 1">
-
-    <StackLayout VerticalOptions="Center">
-
-        <Label Text="Seite 1"/>
-        <Button Text="Zur Seite 2" Clicked="Seite2_Clicked"/>
-        <Button Text="Zur Seite 2 - modal" Clicked="Seite2Modal_Clicked"/>
-
-    </StackLayout>
-
+             x:Class="Navigation_Demo.Seite2"
+             Title="Seite 2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Seite 2"
+                HorizontalOptions="CenterAndExpand" />
+            <BoxView BackgroundColor="Goldenrod"/>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
