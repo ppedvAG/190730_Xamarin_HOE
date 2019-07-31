@@ -16,6 +16,23 @@ namespace Images_Demo
         public MainPage()
         {
             InitializeComponent();
+            //UriImageSource src = (UriImageSource)ImageSource.FromUri(new Uri("https://baconmockup.com/500/500"));
+            //// Standardfall: 
+            //src.CachingEnabled = true;
+            //src.CacheValidity = TimeSpan.FromHours(24);
+
+            //imageBild.Source = src;
+
+
+            // Variante 2) FromFile: Ladet das Bild aus dem nativen Projekt
+            // Android: 
+            // imageBild.Source = ImageSource.FromFile("Icons/katze.png");
+
+
+            // Variante 3)
+
+            // Ressourcenstring: "Applikationsname.Ordnername.Dateiname.extension"
+            // imageBild.Source = ImageSource.FromResource("Images_Demo.Icons.hund.jpg");
         }
     }
 }

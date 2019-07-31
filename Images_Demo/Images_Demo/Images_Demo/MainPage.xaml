@@ -3,14 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Images_Demo"
              mc:Ignorable="d"
              x:Class="Images_Demo.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <!-- Variante 1: Webressource Source="https://baconmockup.com/500/500" -->
+        <!-- Variante 2: Bild im nativen Projekt Source="katze.png" -->
+
+        <!-- Variante 3: Bild im .NET Standard Projekt  -->
+        <!-- Achtung: Bild muss als BuildAction: "EmbeddedResource" gesetzt werden -->
+
+        <Image x:Name="imageBild" Source="{local:EmbeddedResource ID=Images_Demo.Icons.hund.jpg }" />
+    
     </StackLayout>
 
 </ContentPage>
