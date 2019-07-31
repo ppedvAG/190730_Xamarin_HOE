@@ -33,7 +33,7 @@ namespace Listen
                 new Person{Vorname="Anna",Nachname ="Bolika",Alter=90,Kontostand = 4423423423},
                 new Person{Vorname="Clair",Nachname ="Grube",Alter=100,Kontostand = -12312312312312312},
             };
-            collectionViewPersonen.ItemsSource = personen;
+            listViewPersonen.ItemsSource = personen;
         }
     }
 }

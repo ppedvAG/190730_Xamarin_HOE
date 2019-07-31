@@ -9,7 +9,7 @@
     <!-- ItemsLayout="HorizontalList" für Horizontale Listen-->
     <StackLayout>
         <Button Text="Daten laden !" Clicked="Button_Clicked"/>
-        <CollectionView x:Name="collectionViewPersonen"
+        <!--<CollectionView x:Name="collectionViewPersonen"
                         SelectionMode="Single">
             
             <CollectionView.ItemsLayout>
@@ -43,15 +43,24 @@
                         <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Kontostand}"/>
 
                     </Grid>
-                    
-                    <!-- In der ListView: -->
-                    <!-- TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}"/-->
-
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>
-        
-        
+        </CollectionView>-->
+
+        <ListView x:Name="listViewPersonen">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!-- TextCell: Text mit "Text" und "Detail" 2 Texte an -->
+                    <!-- ImageCell: -||- inkl einem Icon -->
+                    <!-- ViewCell: Eigene Templates zusammenbauen -->
+
+                    <ImageCell ImageSource="https://placekitten.com/100/100" Text="{Binding Vorname}" Detail="{Binding Alter}"/>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
     </StackLayout>
 
 </ContentPage>
