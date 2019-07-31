@@ -9,10 +9,13 @@
         <StackLayout x:Name="stackLayoutPortrait" VerticalOptions="Center">
             <Label Text="Portrait-Template"/>
             <BoxView BackgroundColor="LightGray"/>
+            <Button Text="Taschenlampe An/Aus" Clicked="ButtonTaschenlampe_Clicked"/>
         </StackLayout>
         <StackLayout IsVisible="False" x:Name="stackLayoutLandscape" VerticalOptions="Center">
             <Label Text="Landscape-Template"/>
             <BoxView BackgroundColor="LightSlateGray"/>
+            <Entry x:Name="entryTextToSpeech"/>
+            <Button Text="Text 2 Speech" Clicked="ButtonText2Speech_Clicked"/>
         </StackLayout>
     </Grid>
 

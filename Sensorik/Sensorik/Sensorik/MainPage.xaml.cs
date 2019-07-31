@@ -33,5 +33,28 @@ namespace Sensorik
                 stackLayoutPortrait.IsVisible = false;
             }
         }
+
+        private bool isOn = false;
+        private void ButtonTaschenlampe_Clicked(object sender, EventArgs e)
+        {
+            if (isOn)
+            {
+                isOn = false;
+                Flashlight.TurnOffAsync();
+            }
+            else
+            {
+                isOn = true;
+                Flashlight.TurnOnAsync();
+            }
+            
+        }
+
+        private async void ButtonText2Speech_Clicked(object sender, EventArgs e)
+        {
+            var locale = await TextToSpeech.GetLocalesAsync();
+
+            await TextToSpeech.SpeakAsync(entryTextToSpeech.Text,new SpeechOptions { Pitch = 1.5f,Locale = locale.ElementAt(1) });
+        }
     }
 }
