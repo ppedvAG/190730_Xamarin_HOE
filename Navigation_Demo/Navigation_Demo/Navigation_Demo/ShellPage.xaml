@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Navigation_Demo.ShellPage"
+             Title="Shell mit Xamarin.Forms 4">
+
+    <FlyoutItem Title="Hauptmenü">
+        
+        <Tab Title="Hauptseite">
+            <ShellContent>
+                <ContentPage>
+                    <StackLayout>
+                        <Label Text="Hauptseite im Tab Hauptseite"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+        
+        <Tab Title="Einstellungen">
+            <ShellContent>
+                <ContentPage>
+                    <StackLayout>
+                        <Label Text="Meine Settings ..."
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    
+    
+</Shell>
