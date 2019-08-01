@@ -30,8 +30,12 @@ namespace DatenSpeichernUndLaden
 
         private void ButtonLaden_Clicked(object sender, EventArgs e)
         {
-            var fullpath = Path.Combine(FileSystem.AppDataDirectory, "demo.txt");
-            DisplayAlert("Datei:", File.ReadAllText(fullpath), "Ok");
+            //var fullpath = Path.Combine(FileSystem.AppDataDirectory, "demo.txt");
+            //DisplayAlert("Datei:", File.ReadAllText(fullpath), "Ok");
+
+            // Demo:
+            string path = DependencyService.Get<IPathHelper>().GetDirectoryPath();
+            DisplayAlert("Path aus Android:", path, "ok");
         }
     }
 }
