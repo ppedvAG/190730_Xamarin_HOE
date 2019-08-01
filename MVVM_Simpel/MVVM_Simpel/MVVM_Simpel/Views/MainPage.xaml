@@ -3,13 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MVVM_Simpel.ViewModels"
              mc:Ignorable="d"
              x:Class="MVVM_Simpel.MainPage">
-
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
     <StackLayout Padding="20">
         
-        <Button Text="Personen laden !"/>
-        <ListView />
+        <Button Text="Personen laden !" Command="{Binding GetPersonenCommand}"/>
+        <ListView ItemsSource="{Binding Personen}" />
         
     </StackLayout>
 
