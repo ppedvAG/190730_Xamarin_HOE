@@ -13,7 +13,7 @@
     <StackLayout Padding="20">
         
         <Button Text="Personen laden !" Command="{Binding GetPersonenCommand}"/>
-        <ListView ItemsSource="{Binding Personen}" >
+        <ListView ItemsSource="{Binding Personen}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}"/>
