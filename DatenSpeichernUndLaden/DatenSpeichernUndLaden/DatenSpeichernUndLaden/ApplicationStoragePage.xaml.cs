@@ -32,6 +32,7 @@ namespace DatenSpeichernUndLaden
                 App.Current.Properties["switchNotifications"] = switchNotifications.IsToggled;
             }
 
+            Application.Current.SavePropertiesAsync(); // erzwingt das sofortige Speichern
             DisplayAlert("Speichern", "Ihre Daten wurden 'gespeichert'", "Ok");
         }
 

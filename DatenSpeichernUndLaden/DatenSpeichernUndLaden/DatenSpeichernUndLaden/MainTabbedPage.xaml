@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DatenSpeichernUndLaden"
              mc:Ignorable="d"
              x:Class="DatenSpeichernUndLaden.MainTabbedPage">
-    
-    
-    
+
+    <local:ApplicationStoragePage Title="App-Properties"/>
+
 </TabbedPage>

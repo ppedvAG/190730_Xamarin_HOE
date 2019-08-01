@@ -20,7 +20,7 @@ namespace DatenSpeichernUndLaden
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            // <--- Hier an dieser Stelle werden die App.Current.Properties gespeichert
         }
 
         protected override void OnResume()
