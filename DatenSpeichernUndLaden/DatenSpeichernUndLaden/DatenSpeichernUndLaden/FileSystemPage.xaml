@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DatenSpeichernUndLaden.FileSystemPage">
+
+    <StackLayout VerticalOptions="Center">
+        <Entry x:Name="entryData" Placeholder="Text, der gespeichert werden soll"/>
+        <Button x:Name="buttonSpeichern" Text="Daten in .txt speichern" Clicked="ButtonSpeichern_Clicked"/>
+        <Button x:Name="buttonLaden" Text="Daten aus .txt laden" Clicked="ButtonLaden_Clicked"/>
+    </StackLayout>
+    
+</ContentPage>
