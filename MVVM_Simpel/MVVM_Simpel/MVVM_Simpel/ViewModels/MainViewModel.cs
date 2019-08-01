@@ -24,7 +24,7 @@ namespace MVVM_Simpel.ViewModels
         public ICommand GetPersonenCommand { get; set; }
         private void GetPersonen(object obj)
         {
-            throw new NotImplementedException();
+            Personen = service.GetPersonen();
         }
     }
 }
