@@ -9,4 +9,5 @@
 
     <local:ApplicationStoragePage Title="App-Properties"/>
     <local:FileSystemPage Title="FileSystem"/>
+    <local:RestPage Title="REST-Service abfragen"/>
 </TabbedPage>
