@@ -11,11 +11,9 @@ namespace MVVM_Simpel.ViewModels
 {
     class MainViewModel : BaseViewModel
     {
-        public MainViewModel()
+        public MainViewModel(PersonenService service)
         {
-            // Kontrollfreak-Antipattern
-            service = new PersonenService();
-
+            this.service = service;
             GetPersonenCommand = new Command(GetPersonen);
         }
 

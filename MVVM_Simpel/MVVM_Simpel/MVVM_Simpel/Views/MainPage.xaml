@@ -5,10 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:MVVM_Simpel.ViewModels"
              mc:Ignorable="d"
-             x:Class="MVVM_Simpel.MainPage">
-    <ContentPage.BindingContext>
+             x:Class="MVVM_Simpel.MainPage"
+             BindingContext="{Binding Source={StaticResource Locator},Path=Main}">
+    <!--<ContentPage.BindingContext>
         <vm:MainViewModel/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
     
     <StackLayout Padding="20">
         

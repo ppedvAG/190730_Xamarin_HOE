@@ -16,6 +16,7 @@ namespace MVVM_Simpel
         public MainPage()
         {
             InitializeComponent();
+            // BindingContext = new MainViewModel(new PersonenService);
         }
     }
 }
