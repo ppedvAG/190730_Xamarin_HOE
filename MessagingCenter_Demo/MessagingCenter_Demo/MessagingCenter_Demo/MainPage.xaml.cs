@@ -16,6 +16,23 @@ namespace MessagingCenter_Demo
         public MainPage()
         {
             InitializeComponent();
+
+            // Subscriber
+            MessagingCenter.Subscribe<Slider>(this, "sliderValueChanged", ChangeLabel);
+        }
+
+        private void ChangeLabel(Slider sender)
+        {
+            labelWert.Text = sender.Value.ToString();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new Seite2());
+
+            // Alternative Navigation
+            // App.Current.NavigateTo(typeof(Seite2)); // <== selbst implementieren !!!!
+            // Shell.Current.GoToAsync("//demoseite");
         }
     }
 }

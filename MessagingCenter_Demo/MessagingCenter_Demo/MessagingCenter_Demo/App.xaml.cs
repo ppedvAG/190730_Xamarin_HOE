@@ -6,6 +6,9 @@ namespace MessagingCenter_Demo
 {
     public partial class App : Application
     {
+
+        // public const string SliderWertChanged = "slw";
+
         public App()
         {
             InitializeComponent();

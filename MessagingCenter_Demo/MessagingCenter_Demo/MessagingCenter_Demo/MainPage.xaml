@@ -8,9 +8,10 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label x:Name="labelWert" Text="--- WERT aus dem Slider ---" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Button Text="Zur Seite 2" Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>
