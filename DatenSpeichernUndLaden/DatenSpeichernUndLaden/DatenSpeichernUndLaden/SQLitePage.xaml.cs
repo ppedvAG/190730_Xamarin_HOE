@@ -29,7 +29,6 @@ namespace DatenSpeichernUndLaden
         {
             listViewToDo.ItemsSource = con.Table<ToDoItem>().ToList();
             listViewToDo.EndRefresh();
-            con.
         }
 
         private void Button_Clicked(object sender, EventArgs e)
