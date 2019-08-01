@@ -6,11 +6,10 @@
              mc:Ignorable="d"
              x:Class="CustomRenderer_Demo.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="Center">
+
+        <Entry x:Name="meinEntry" Placeholder="Entry mit Custom-Renderer"/>
+
     </StackLayout>
 
 </ContentPage>
